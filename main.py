@@ -38,7 +38,7 @@ from subprocess import getstatusoutput
 # Replace these with your actual values (safely stored)
 api_id = 15816419
 api_hash = "626ed6dab78881858778d9663682962e"
-bot_token = "YOUR_BOT_TOKEN"
+bot_token = "6649050549:AAFgk4XBoII3z_OVh3bQuFByhzseoPr1EZ4"
 
 # Initialize the client
 bot = Client(
