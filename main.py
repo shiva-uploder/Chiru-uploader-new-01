@@ -294,15 +294,15 @@ async def account_login(bot: Client, m: Message):
     subscription_data = read_subscription_data()
 
     if not any(user[0] == user_id for user in subscription_data):
-        await m.reply_text("❌ You are not a premium user. Please upgrade your subscription! 💎")
-        return
-    
-    # If the user is a premium user, continue with the rest of the logic
-    # You can add further processing logic here
-      await m.reply_text("✅ You are a premium user!")
-      return          
-    editable = await m.reply_text("**Please Send TXT file for download**")
-    input: Message = await bot.listen(editable.chat.id)
+    if not any(user[0] == user_id for user in subscription_data):
+    await m.reply_text("❌ You are not a premium user. Please upgrade your subscription! 💎")
+    return
+
+# If the user is a premium user, continue with the rest of the logic
+await m.reply_text("✅ You are a premium user!")
+
+editable = await m.reply_text("**Please Send TXT file for download**")
+input: Message = await bot.listen(editable.chat.id)
     y = await input.download()
     file_name, ext = os.path.splitext(os.path.basename(y))  # Extract filename & extension
 
