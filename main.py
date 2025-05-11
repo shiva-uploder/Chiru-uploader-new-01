@@ -299,9 +299,8 @@ async def account_login(bot: Client, m: Message):
     
     # If the user is a premium user, continue with the rest of the logic
     # You can add further processing logic here
-    await m.reply_text("✅ You are a premium user!")
-
-        return          
+      await m.reply_text("✅ You are a premium user!")
+      return          
     editable = await m.reply_text("**Please Send TXT file for download**")
     input: Message = await bot.listen(editable.chat.id)
     y = await input.download()
