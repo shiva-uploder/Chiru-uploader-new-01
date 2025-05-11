@@ -302,7 +302,7 @@ await m.reply_text("✅ You are a premium user!")
 
 editable = await m.reply_text("**Please Send TXT file for download**")
 input: Message = await bot.listen(editable.chat.id)
-    y = await input.download()
+y = await input.download()
     file_name, ext = os.path.splitext(os.path.basename(y))  # Extract filename & extension
 
     if file_name.endswith("_helper"):  # ✅ Check if filename ends with "_helper"
